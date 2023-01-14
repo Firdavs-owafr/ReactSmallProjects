@@ -5,40 +5,41 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state = {
-      text: 'Helloo',
-      textI: 611
+      text: '',
+      age: '',
     }
-    this.showText = this.showText.bind(this) // bog'lamoq 
-    this.showInput = this.showInput.bind(this)
+    this.inputt = this.inputt.bind(this)
+    this.notReset = this.notReset.bind(this)
   }
 
-  showText() {
-    this.setState({text: 'hii'})
+  inputt(e) {
+    this.setState({ [e.target.name]: e.target.value});
   }
 
-  //   showText = () => {
-  //   this.setState({text: 'hii'}) // arrow functionga keremas bog'lash
-  // }
-
-  showInput(e) {
-    this.setState({textI: e.target.value})
-  }
-
-  move = (e) => {
-    console.log(e.target.textContent);
+  notReset(e) {
+    e.preventDefault()
   }
 
   render(){
+    let newInput = ''
+    if(this.state.text !== '') {
+      newInput = <h1>Your text: {this.state.text}</h1>
+    } else {
+      newInput = ''
+    }
     return (
       <div>
-        <button onClick={this.showText}>Push</button>
-          <input type="text" onInput={this.showInput} />
-          <p onMouseMove={this.move}>WOW</p>
-        <p>{this.state.text}</p>
-        <p>{this.state.textI}</p>
+            <form onSubmit={this.notReset}>
+                <input type="text" onChange={this.inputt} name="text" />
+                <input type="number" onChange={this.inputt} name="age" />
+                {newInput}
+                <h2>Your age: {this.state.age}</h2>
+                <input type="submit" value="CLICK" />
+            </form>
       </div>
     );
   }
+
 }
 
 export default App;
