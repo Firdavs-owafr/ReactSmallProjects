@@ -8,23 +8,14 @@ class App extends Component {
       text: '',
       age: '',
     }
-    this.inputt = this.inputt.bind(this)
-    this.notReset = this.notReset.bind(this)
-  }
-
-  inputt(e) {
-    this.setState({ [e.target.name]: e.target.value});
-  }
-
-  notReset(e) {
-    e.preventDefault()
+    
   }
 
   render(){
     
     return (
       <div>
-            
+              hello
       </div>
     );
   }
