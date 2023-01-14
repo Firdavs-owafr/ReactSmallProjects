@@ -1,24 +1,34 @@
 import React,{Component} from "react";
-import Small from "./Small";
 import './index.css';
 
-
 class App extends Component {
-
-    render(props) {
-
-      const {title,navv,go} = this.props;
-
-      return (
-        <div className="App">
-          <header className="App-header">
-              App
-              <section>{title},{go}</section>
-              <Small navv={navv} />
-          </header>
-        </div>
-      );
+  constructor(props){
+    super(props)
+    this.state = {
+      text: '',
+      age: '',
     }
+    this.inputt = this.inputt.bind(this)
+    this.notReset = this.notReset.bind(this)
+  }
+
+  inputt(e) {
+    this.setState({ [e.target.name]: e.target.value});
+  }
+
+  notReset(e) {
+    e.preventDefault()
+  }
+
+  render(){
+    
+    return (
+      <div>
+            
+      </div>
+    );
+  }
+
 }
 
 export default App;
