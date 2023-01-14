@@ -21,21 +21,10 @@ class App extends Component {
   }
 
   render(){
-    let newInput = ''
-    if(this.state.text !== '') {
-      newInput = <h1>Your text: {this.state.text}</h1>
-    } else {
-      newInput = ''
-    }
+    
     return (
       <div>
-            <form onSubmit={this.notReset}>
-                <input type="text" onChange={this.inputt} name="text" />
-                <input type="number" onChange={this.inputt} name="age" />
-                {newInput}
-                <h2>Your age: {this.state.age}</h2>
-                <input type="submit" value="CLICK" />
-            </form>
+            
       </div>
     );
   }
