@@ -9,7 +9,6 @@ class App extends Component {
   }
 
   render() {
-    alert('render');
     return (
       <div>
           <h1>hiiiiiiii</h1>
