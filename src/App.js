@@ -1,30 +1,27 @@
 import React, { Component } from "react";
 import './index.css';
+import Li from './Li'
 
-class App extends Component {
-  constructor(props) {
+class App extends Component { 
+  constructor(props){
     super(props)
     this.state = {
       users: []
     }
   }
 
-  async componentDidMount() {
-    const url = await fetch('https://jsonplaceholder.typicode.com/users');
-    const users = await url.json();
-    this.setState(users)
+  async componentDidMount(){
+    const urlBase = await fetch('https://jsonplaceholder.typicode.com/todos') 
+    const users = await urlBase.json();
+    this.setState({users})
   }
 
   render() {
     return (
       <div>
-          {
-          this.state.users.map((item) => (
-                <h1>{item.name}</h1>
-          ))
-          }
+          <Li dataBazzz={this.state.users}/>
       </div>
-    );
+    )
   }
 
 }
