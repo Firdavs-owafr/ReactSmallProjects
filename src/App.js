@@ -12,13 +12,7 @@ class App extends React.Component {
   }
 
   componentDidMount(){
-    fetch('www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail',  {
-      method: "GET",
-      headers: {
-          'Content-Type': 'application/json;charset=utf-8'
-      },
-      body: JSON.stringify(this.state)
-  })
+    fetch('www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail')
       .then(res => res.json())
       .then((json) => {
         this.setState({
