@@ -19,6 +19,15 @@ code {
   font-family: 'Poppins', sans-serif;
 }
 
+button{
+  color: white;
+  width: 120px;
+  height: 40px;
+  outline: none;
+  border: 0;
+  border-radius: 4px;
+}
+
 .off{
   background-color: red;
 }

@@ -9,7 +9,7 @@ class App extends Component {
       label: 'Pres'
     }
     this.press = this.press.bind(this)
-    console.log('constructor');
+    console.log('constructor'); 
   }
 
   componentDidMount(){
