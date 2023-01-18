@@ -18,3 +18,11 @@ body {
 code {
   font-family: 'Poppins', sans-serif;
 }
+
+.off{
+  background-color: red;
+}
+
+.on{
+  background-color: yellow;
+}

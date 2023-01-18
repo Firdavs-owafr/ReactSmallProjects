@@ -9,6 +9,7 @@ class App extends Component {
       label: 'Pres'
     }
     this.press = this.press.bind(this)
+    console.log('constructor');
   }
 
   componentDidMount(){
@@ -21,6 +22,11 @@ class App extends Component {
 
   shouldComponentUpdate(){
     console.log('shouldComponentUpdate');
+    return true;
+  }
+
+  componentWillUnmount(){
+    console.log('componentWillUnmount');
   }
 
   press(){
@@ -29,7 +35,7 @@ class App extends Component {
   }
 
   render() {
-
+    console.log('render');
     return (
       <div>
         <button onClick={this.press} className={this.state.class}>{this.state.label}</button>
