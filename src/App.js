@@ -1,24 +1,41 @@
-import React,{Component} from "react";
-import Small from "./Small";
+import React from "react";
+import { useState } from "react";
 import './index.css';
+import './Boostrap.css'
+import Generator from "./Generator";
+import { useCallback } from "react";
 
 
-class App extends Component {
+export default function App () {
+  const [counter,setCounter] = useState(0)
+  const [inc,setInc] = useState(true)
 
-    render(props) {
+  const plus = () => {
+    setCounter(prevState => prevState + 1)
+  }
 
-      const {title,navv,go} = this.props;
+  const onToogle = () => {
+    setInc(prevState => !prevState)
+  }
 
-      return (
-        <div className="App">
-          <header className="App-header">
-              App
-              <section>{title},{go}</section>
-              <Small navv={navv} />
-          </header>
-        </div>
-      );
-    }
+  const style = {
+    color: inc ? 'green' : 'red'
+  }
+
+  const  generat = useCallback(() => {
+    return new Array(counter).fill('').map((_,ind) => `This is number${ind + 1}`)
+}, [counter])
+
+    return(
+            <div>
+              <h1 style={style}> Counter {counter}</h1>
+              <div className="d-flex">
+                <button onClick={plus} className="btn btn-success ">Increase</button>
+                <button onClick={onToogle} className="btn btn-danger">Toggle</button>
+              </div>
+              {
+                <Generator generat={generat} />
+              }
+            </div>
+)
 }
-
-export default App;
