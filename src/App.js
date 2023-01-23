@@ -1,6 +1,7 @@
 import React from "react";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import './index.css';
+import './Boostrap.css'
 
 
 export default function App () {
@@ -22,17 +23,20 @@ export default function App () {
     setCounter( Math.floor(Math.random() * 10) )
   }
 
-
+  useEffect(() => {
+    console.log('WOW');
+    document.title = 'React ' +  counter
+  })
 
     return(
             <div>
               <h1>{counter}</h1>
               <div className="d-flex">
-                <button onClick={plus} className="btn btn-success">+</button>
+                <button onClick={plus} className="btn btn-success ">+</button>
                 <button onClick={minus} className="btn btn-danger">-</button>
                 <button onClick={nulll} className='btn btn-dark'>0</button>
-                <button onClick={randomm} className='btn btn-dark'>Random</button>
+                <button onClick={randomm} className='btn btn-primary'>Random</button>
               </div>
             </div>
-          )
+)
 }
