@@ -6,7 +6,7 @@ const  Li = (props) => {
             <div>
                 {props.dataBazzz.map((item) => {
                     console.log(item);
-                    return ( <li key={item.id}> Id: {item.id}   Title: {item.title} </li> )
+                    return ( <sli key={item.id}> Id: {item.id}   Title: {item.title} </sli> )
                 })}
             </div>
         )
