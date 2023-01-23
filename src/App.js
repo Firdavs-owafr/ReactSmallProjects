@@ -18,7 +18,7 @@ export default function App () {
   const nulll = () => {
     setCounter(0)
   }
-
+  // use Callback
   const randomm = () => {
     setCounter( Math.floor(Math.random() * 10) )
   }
