@@ -1,42 +1,35 @@
-import React from "react";
-import { useState,useMemo } from "react";
+import React,{ useRef,useState } from "react";
 import './index.css';
 import './Boostrap.css'
 
-
 export default function App () {
-  const [counter,setCounter] = useState(0)
-  const [inc,setInc] = useState(true)
+  const [state,setSate] = useState('')
+  const [state2,setSate2] = useState('')
+  const cvcRed = useRef(null)
+  const cvcRef2 = useRef(null)
 
-  const plus = () => {
-    setCounter(prevState => prevState + 1)
+  const handle = (e) => {
+    const value = e.target.value;
+    setSate(value)
+    console.log(value.length);
+    if(value.length === 16){
+      cvcRed.current.focus()
+    }
   }
 
-  const onToogle = () => {
-    setInc(prevState => !prevState)
+  const handle22 = (e) => {
+    const value = e.target.value;
+    setSate2(value)
+    if(value.length === 4){
+      cvcRef2.current.focus()
+    }
   }
 
-  const style = {
-    color: inc ? 'green' : 'red'
-  }
-
-  const num2 = (num) => {
-    console.log('ref');
-    let i = 0;
-    while(i < 10000) i++
-    return num * 2
-  }
-
-  const num = useMemo(() => num2(counter), [counter])
-
-    return(
+  return(
             <div>
-              <h2>hii</h2>
-              <h1 style={style}> Counter {num}</h1>
-              <div className="d-flex">
-                <button onClick={plus} className="btn btn-success ">Increase</button>
-                <button onClick={onToogle} className="btn btn-danger">Toggle</button>
-              </div>
+                <input type="text" className="form-control " placeholder="Card Number" onChange={handle} value={state} />
+                <input ref={cvcRed} type="text" className="form-control" placeholder="Secure" onChange={handle22} value={state2} />
+                <input ref={cvcRef2} type="text" className="form-control" placeholder="Oppa" />
             </div>
 )
 }
