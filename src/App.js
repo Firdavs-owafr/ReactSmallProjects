@@ -31,6 +31,7 @@ export default function App () {
 
     return(
             <div>
+              <h2>hii</h2>
               <h1 style={style}> Counter {num}</h1>
               <div className="d-flex">
                 <button onClick={plus} className="btn btn-success ">Increase</button>
