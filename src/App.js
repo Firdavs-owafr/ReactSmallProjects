@@ -27,6 +27,7 @@ export default function App () {
 
   return(
             <div>
+              <h1>hi</h1>
                 <input type="text" className="form-control " placeholder="Card Number" onChange={handle} value={state} />
                 <input ref={cvcRed} type="text" className="form-control" placeholder="Secure" onChange={handle22} value={state2} />
                 <input ref={cvcRef2} type="text" className="form-control" placeholder="Oppa" />
