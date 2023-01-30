@@ -1,13 +1,14 @@
 import React from 'react'
-import { Link,Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
+import { CustomLink } from './CustomLink';
 
 const Layout = () => {
   return (
     <>
         <header>
-          <Link to="/" style={{ marginRight: '10px'}} >Home</Link>
-          <Link to="/about" style={{marginRight: '10px'}} >About</Link>
-          <Link to="/footer" >Footer</Link>
+          <CustomLink to="/" style={{ marginRight: '10px'}}>Home</CustomLink>
+          <CustomLink to="/about" style={{marginRight: '10px'}} >About</CustomLink>
+          <CustomLink to="/footer">Footer</CustomLink>
         </header>
 
     <main>
