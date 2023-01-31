@@ -1,15 +1,13 @@
-import React from 'react'
-import { useContext } from 'react'
-import { ContentText } from '../App'
-import Child2 from './Child2'
+import React,{ useContext } from 'react'
+import { Conten } from '../App'
 
 export default function Child1() {
-    const count = useContext(ContentText)
+  const useContextt = useContext(Conten)
+  console.log(useContextt);
   return (
     <div>
-        <h1>Child1</h1>
-        <h2>{count}</h2>
-        <Child2/>
+        <h1>hii</h1>
+        {useContextt.name}
     </div>
   )
 }
